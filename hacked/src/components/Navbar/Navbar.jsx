@@ -5,8 +5,8 @@ import "./Navbar.css";
 
 const SciFiNavbar = () => {
   const navItems = [
-    'ABOUT', 'MISSIONS', 'TIMELINE', 'SPONSORS', 
-    'ACHIEVEMENTS', 'CREW', 'INTEL'
+    'ABOUT', 'TIMELINE', 'SPONSORS', 'PRIZES',
+     'CREW','CONTACT'
   ];
 
   return (
