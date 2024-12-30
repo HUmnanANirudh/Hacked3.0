@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
+// Import components
+import Navbar from './components/Navbar/Navbar.jsx';
+import WhatIsHacked from './components/WhatIsHacked/WhatIsHacked.jsx';
+import Schedule from './components/Schedule/Schedule.jsx';
+import PastSponsors from './components/PastSponsors/PastSponsors.jsx';
+import SponsorshipPlan from './components/SponsorshipPlan/SponsorshipPlan.jsx';
+import Prizes from './components/Prizes/Prizes.jsx';
+import LeadOrg from './components/LeadOrg/LeadOrg.jsx';
+import MeetTheTeam from './components/MeetTheTeam/MeetTheTeam.jsx';
+import FAQs from './components/FAQs/FAQs.jsx';
+import Footer from './components/Footer/Footer.jsx';
+
+// Assemble components in App.js
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <WhatIsHacked />
+      <Schedule />
+      <PastSponsors />
+      <SponsorshipPlan />
+      <Prizes />
+      <LeadOrg />
+      <MeetTheTeam />
+      <FAQs />
+      <Footer />
     </div>
   );
 }
