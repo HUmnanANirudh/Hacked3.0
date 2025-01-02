@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-// Import components
+// Import components dummmy
 import Navbar from './components/Navbar/Navbar.jsx';
 import WhatIsHacked from './components/WhatIsHacked/WhatIsHacked.jsx';
 import Schedule from './components/Schedule/Schedule.jsx';
