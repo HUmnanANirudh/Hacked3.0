@@ -1,6 +1,7 @@
 import { useState,lazy,Suspense } from "react";
 import { motion } from "motion/react";
 
+const Core = lazy (()=>import("./Core") )
 const Operations = lazy(() => import("./Operations"));
 const On_Marketing = lazy(() => import("./On_Marketing"));
 const Off_Marketing = lazy(() => import("./Off_Marketing"));
@@ -13,6 +14,7 @@ const Entry = lazy(() => import("./Entry"));
 const Sponsorship = lazy(() => import("./Sponsorship"));
 
 const items = [
+  { id: "core", label: "Core",component: Core },
   { id: "operations", label: "Operations",component: Operations },
   { id: "On_marketing", label: "Online Marketing",component: On_Marketing },
   { id: "Off_marketing", label: "Offline Marketing",component: Off_Marketing},
@@ -29,24 +31,24 @@ const TeamNav = () => {
 
   const CurrentComponend = items.find(item=>item.id === Clicked)?.component;
   return (
-    <div className="flex justify-center items-center">
-      <div className="flex flex-wrap justify-center items-center w-[80%]">
+    <div className="flex justify-center items-center px-4">
+      <div className="flex flex-wrap justify-center items-center w-full md:w-[80%]">
         {items.map((item) => (
           <button
             key={item.id}
             onClick={() => setClicked(item.id)}
             className={`${
               Clicked === item.id ? "" : "hover:text-white/60"
-            } relative rounded-full px-8 py-4 text-xl font-medium text-white font-serif`}
+            } relative rounded-full px-5 md:px-8 md:py-4 py-3 text-xl font-medium text-white`}
           >
             {Clicked === item.id && (
               <motion.span
                 layoutId="nav"
-                className="absolute inset-0 m-2 z-10 bg-white mix-blend-difference rounded-full"
+                className="absolute inset-0 m-2 z-10 bg-white mix-blend-difference rounded-full my-2"
                 transition={{ type: "spring", bounce: 0.2, duration: 0.8 }}
               />
             )}
-            <span>{item.label}</span>
+            <span className="text-base md:text-xl">{item.label}</span>
           </button>
         ))}
         <div className="w-full">
