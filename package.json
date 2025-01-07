@@ -6,19 +6,16 @@
     "ajv": "^8.12.0",
     "ajv-keywords": "^5.1.0",
     "cra-template": "1.2.0",
-<<<<<<< HEAD
     "lucide-react": "^0.469.0",
     "motion": "^11.15.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
     "react-scripts": "5.0.1",
-=======
     "linit": "^1.0.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scripts": "^5.0.1",
->>>>>>> 23db9ac110193b9d1b1efb2014c150ce5d0d85cf
     "web-vitals": "^4.2.4"
   },
   "scripts": {
