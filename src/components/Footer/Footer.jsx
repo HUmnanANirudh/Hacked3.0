@@ -1,9 +1,10 @@
 import React from "react";
 
 function Footer() {
+  var currentYear= (new Date()).getFullYear();  
   return (
-    <footer style={{ padding: "20px", background: "#000", color: "#fff", textAlign: "center" }}>
-      <p>© 2024 Hacked 3.0. All rights reserved.</p>
+    <footer >
+      <p className="text-white text-center p-5">© {currentYear} Hacked 3.0. All rights reserved.</p>
     </footer>
   );
 }

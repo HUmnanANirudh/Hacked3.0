@@ -1,10 +1,10 @@
 import React from "react";
-
+import TeamNav from "./TeamNav"
 function MeetTheTeam() {
   return (
-    <section style={{ padding: "50px", background: "#777", color: "#fff" }}>
-      <h2>Meet the Team</h2>
-      <p>Placeholder for team member details.</p>
+    <section id="#team">
+      <h1 className="text-center p-10 text-3xl font-bold">Meet the Team</h1>
+      <TeamNav/>
     </section>
   );
 }
