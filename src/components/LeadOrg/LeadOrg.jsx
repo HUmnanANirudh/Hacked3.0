@@ -12,8 +12,8 @@ function LeadOrg() {
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center mt-6 items-center gap-20 md:gap-4 w-full md:w-2/3">
-          <Card />
-          <Card />
+          <Card img={"/assets/Shrey.png"} name={"Shrey Jaiswal"}/>
+          <Card img={"/assets/Priyal.png"} name={"Priyal Kuller"}/>
         </div>
       </div>
     </section>

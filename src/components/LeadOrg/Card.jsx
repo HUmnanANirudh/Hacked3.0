@@ -1,10 +1,10 @@
-const Card = () => {
+const Card = ({img,name}) => {
   return (
     <div className="relative flex flex-col justify-center items-center w-full max-w-xs md:max-w-sm lg:max-w-md bg-gray-900 rounded-3xl ">
       <div className="absolute -top-10">
         <img
-          src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
-          className="w-20 h-20 object-cover rounded-full shadow-xl shadow-gray-600"
+          src={img}
+          className="w-20 h-20 object-fill rounded-full shadow-xl shadow-gray-600 bg-white"
           loading="lazy"
           alt=""
         />
@@ -13,7 +13,7 @@ const Card = () => {
       <div className="text-center flex flex-col justify-start pt-4">
         <span className="text-red-600 text-5xl md:text-6xl lg:text-7xl leading-none pt-10">&ldquo;</span>
         <div>
-        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-white">Name</h1>
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-white">{name}</h1>
         <p className="text-base md:text-lg lg:text-xl">Lorem ipsum dolor sit amet.</p>
         </div>
       </div>
