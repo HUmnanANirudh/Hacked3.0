@@ -1,6 +1,48 @@
-import React from "react";
+import React, { useRef } from "react";
+import "./FAQ.css";
 
 function FAQs() {
+  const handleToggle = (event) => {
+    const details = event.currentTarget;
+    const content = details.querySelector("p");
+
+    if (!details.open) {
+      // Trigger Closing Animation
+      const currentHeight = content.scrollHeight;
+      content.style.maxHeight = `${currentHeight}px`; // Set to full height initially
+      content.style.transition = "none"; // Temporarily disable transition
+      requestAnimationFrame(() => {
+        content.style.transition =
+          "max-height 0.5s ease-in-out, opacity 0.5s ease-in-out";
+        requestAnimationFrame(() => {
+          content.style.maxHeight = "0"; // Collapse smoothly
+          content.style.opacity = "0";
+        });
+      });
+
+      // Wait until animation ends to reset styles
+      content.addEventListener(
+        "transitionend",
+        () => {
+          if (!details.open) {
+            content.style.maxHeight = "0";
+          }
+        },
+        { once: true }
+      );
+    } else {
+      // Trigger Opening Animation
+      content.style.maxHeight = "0"; // Reset height before expanding
+      content.style.transition = "none"; // Temporarily disable transition
+      requestAnimationFrame(() => {
+        content.style.transition =
+          "max-height 0.5s ease-in-out, opacity 0.5s ease-in-out";
+        content.style.maxHeight = `${content.scrollHeight}px`; // Expand smoothly
+        content.style.opacity = "1";
+      });
+    }
+  };
+
   return (
     <section className="p-4 pt-10 bg-[#090a37] min-h-[80vh]">
       <div className="flex w-full flex-col items-center justify-center">
@@ -62,7 +104,8 @@ function FAQs() {
             ].map((item, index) => (
               <details
                 key={index}
-                className="group border-left-4 border-l-8 border-[#321356] [&_summary::-webkit-details-marker]:hidden rounded-md bg-gray-900 bg-opacity-70"
+                className="group border-l-8 border-[#451d72] [&_summary::-webkit-details-marker]:hidden rounded-md bg-gray-900 bg-opacity-70"
+                onToggle={handleToggle}
               >
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900 dark:bg-gray-900 dark:text-white">
                   <h2 className="font-medium">
@@ -85,7 +128,10 @@ function FAQs() {
                   </svg>
                 </summary>
 
-                <p className="mt-4 px-4 leading-relaxed text-gray-700 dark:text-gray-200">
+                <p
+                  className="mt-4 px-4 leading-relaxed text-gray-700 dark:text-gray-200"
+                  style={{ maxHeight: "0", opacity: "0", overflow: "hidden" }}
+                >
                   {item.answer}
                 </p>
               </details>

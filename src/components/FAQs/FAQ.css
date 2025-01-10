@@ -1,0 +1,55 @@
+details {
+  position: relative;
+  background: rgba(23, 25, 35, 0.8); /* Transparent background */
+  backdrop-filter: blur(10px); /* Blur effect for background */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(64, 147, 255, 0.3); /* Subtle border with a hint of color */
+  border-radius: 10px; /* Rounded corners for a smoother look */
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+details summary {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.4); /* Slightly transparent background */
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+details p {
+  color: white;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* When details are open, reveal the content */
+details[open] p {
+  opacity: 1;
+  max-height: 1000px; /* Adjust as needed for content */
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Styling the border glow animation */
+details::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #ff69b4 25%,
+    #00f2fe 75%,
+    transparent 100%
+  );
+}
