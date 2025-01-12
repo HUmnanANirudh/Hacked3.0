@@ -11,12 +11,16 @@ import LeadOrg from './components/LeadOrg/LeadOrg.jsx';
 import MeetTheTeam from './components/MeetTheTeam/MeetTheTeam.jsx';
 import FAQs from './components/FAQs/FAQs.jsx';
 import Footer from './components/Footer/Footer.jsx';
+import CenteredVideo from './components/Vid/Vid.jsx';
 
 // Assemble components in App.js
 function App() {
   return (
     <div>
       <Navbar />
+    
+      <CenteredVideo />
+  
       <WhatIsHacked />
       <Schedule />
       <PastSponsors />

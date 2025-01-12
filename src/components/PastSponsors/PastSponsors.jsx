@@ -62,8 +62,8 @@ function PastSponsors() {
   };
 
   return (
-    <section className="past-sponsors">
-      <h2>PAST SPONSORS</h2>
+    <section className="past-sponsors" id = "PastSponsors">
+      <h2>Past Sponsors</h2>
       <div className="sponsor-cards">
         {logos.map((logo, index) => (
           <div

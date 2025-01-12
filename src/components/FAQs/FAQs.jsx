@@ -44,7 +44,7 @@ function FAQs() {
   };
 
   return (
-    <section className="p-4 pt-10 bg-[#090a37] min-h-[80vh]">
+    <section className="p-4 pt-10 bg-[#090a37] min-h-[80vh]" id="FAQs">
       <div className="flex w-full flex-col items-center justify-center">
         <div className="text-xl md:text-4xl w-full text-center font-bold">
           FREQUENTLY ASKED QUESTIONS
