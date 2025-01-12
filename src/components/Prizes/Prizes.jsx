@@ -9,7 +9,7 @@ const Prizes = () => {
       gradient: "rgba(23, 25, 35, 0.8), rgba(40, 44, 71, 0.8)",
       borderGlow: "#4299e1",
       imageUrl: "/assets/images/rb_3094.png",
-      prizeAmount: "₹50,000",
+      prizeAmount: "₹25,000",
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ const Prizes = () => {
       gradient: "rgba(23, 25, 35, 0.8), rgba(40, 44, 71, 0.8)",
       borderGlow: "#ec4899",
       imageUrl: "/assets/images/rb_3100.png",
-      prizeAmount: "₹25,000",
+      prizeAmount: "₹15,000",
     },
     {
       id: 3,
