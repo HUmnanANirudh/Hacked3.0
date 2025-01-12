@@ -3,7 +3,7 @@ import "./WhatIsHacked.css";
 
 function WhatIsHacked() {
   return (
-    <section className="p-6 flex justify-center items-center bg-[#090a37] min-h-[80vh]">
+    <section className="p-6 flex justify-center items-center bg-[#090a37] min-h-[80vh]" id = "WhatIsHacked">
       <div className="md:flex-row w-11/12 flex gap-3 flex-col items-center">
         <div className="w-full md:w-2/5">
           <img src="/assets/images/what-is-hacked.webp" alt="" />

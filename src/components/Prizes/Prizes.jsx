@@ -33,7 +33,7 @@ const Prizes = () => {
 
   return (
     <div
-      className="p-8 text-center"
+      className="p-8 text-center" id = "Prizes"
       style={{ backgroundColor: "#090a37", minHeight: "100vh" }}
     >
       {/* Heading for the section */}
