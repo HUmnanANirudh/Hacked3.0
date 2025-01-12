@@ -17,9 +17,9 @@ function PastSponsors() {
     "/assets/images/codechef.webp",
   ];
 
-  const colors = ["#00FFFF", "#7FFFD4", "#1E90FF"]; // Cyan-based colors
+  const colors = ["#00FFFF", "#7FFFD4", "#1E90FF"]; 
   const [particles, setParticles] = useState(
-    Array.from({ length: logos.length }, () => []) // Initialize particles for all cards
+    Array.from({ length: logos.length }, () => []) 
   );
   const [hoverActive, setHoverActive] = useState(Array(logos.length).fill(false));
   const cardRefs = useRef([]);
@@ -32,20 +32,20 @@ function PastSponsors() {
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
 
-    const particleCount = 200; // Number of particles
-    const spotlightRadius = 150; // Radius of spotlight effect
+    const particleCount = 200; 
+    const spotlightRadius = 150; 
 
     const newParticles = Array.from({ length: particleCount }).map(() => {
-      const angle = Math.random() * 2 * Math.PI; // Random angle
-      const radius = Math.random() * spotlightRadius; // Random radius within circle
+      const angle = Math.random() * 2 * Math.PI; 
+      const radius = Math.random() * spotlightRadius; 
 
       return {
         x: mouseX + radius * Math.cos(angle),
         y: mouseY + radius * Math.sin(angle),
-        size: Math.random() * 3 + 2, // Random size
-        opacity: Math.random() * 0.6 + 0.4, // Random opacity
-        color: colors[Math.floor(Math.random() * colors.length)], // Random color
-        duration: Math.random() * 1.5 + 0.5, // Random animation duration
+        size: Math.random() * 3 + 2, 
+        opacity: Math.random() * 0.6 + 0.4, 
+        color: colors[Math.floor(Math.random() * colors.length)], 
+        duration: Math.random() * 1.5 + 0.5, 
       };
     });
 
@@ -93,7 +93,7 @@ function PastSponsors() {
             </div>
             <div className="content">
               <img
-                src={logo} // Dynamic logo for each card
+                src={logo} 
                 alt={`Sponsor Logo ${index + 1}`}
                 className="object-contain"
               />
