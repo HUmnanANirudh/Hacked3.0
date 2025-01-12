@@ -36,12 +36,12 @@ const Prizes = () => {
       className="p-8 text-center"
       style={{ backgroundColor: "#090a37", minHeight: "100vh" }}
     >
-      {/* Heading for the section */}
+     
       <h2 className="text-4xl font-bold text-white   mb-20 tracking-wide mt-0">
         PRIZES
       </h2>
 
-      {/* Cards */}
+     
       <div className="flex flex-wrap justify-center items-center gap-10">
         {cards.map((card) => (
           <div
@@ -54,7 +54,7 @@ const Prizes = () => {
               boxShadow: `0 0 20px ${card.borderGlow}20`,
             }}
           >
-            {/* Enhanced top glow effect */}
+            
             <div className="absolute inset-0">
               <div
                 className="absolute inset-x-0 top-0 h-1"
@@ -88,7 +88,7 @@ const Prizes = () => {
             </div>
 
             <div className="relative h-full p-6 flex flex-col items-center">
-              {/* Inner box with image */}
+             
               <div className="relative flex justify-center mb-4">
                 <div className="w-48 h-48 rounded-xl relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
                   <div

@@ -8,7 +8,7 @@ const SponsorshipPlan = () => {
         <h1 className="heading">SPONSORSHIP PLAN</h1>
       </div>
       <div className="plans">
-        {/* Card 1 */}
+        
         <div className="plan-wrapper">
           <div className="plan-card small-plan">
             <div className="placeholder">
@@ -29,7 +29,7 @@ const SponsorshipPlan = () => {
           <button className="cta-button">Title Sponsor</button>
         </div>
 
-        {/* Card 2 */}
+      
         <div className="plan-wrapper">
           <div className="plan-card medium-plan">
             <div className="placeholder">
@@ -51,7 +51,7 @@ const SponsorshipPlan = () => {
           <button className="cta-button">Gold Sponsor</button>
         </div>
 
-        {/* Card 3 */}
+        
         <div className="plan-wrapper">
           <div className="plan-card large-plan">
             <div className="placeholder">
@@ -74,7 +74,7 @@ const SponsorshipPlan = () => {
           <button className="cta-button">Silver Sponsor</button>
         </div>
 
-        {/* Card 4 */}
+        
         <div className="plan-wrapper">
           <div className="plan-card small-plan">
             <div className="placeholder">
