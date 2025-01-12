@@ -1,4 +1,3 @@
-/* Flex container holding the cards */
 .plans {
     display: flex;
     flex-direction: row;
@@ -6,8 +5,9 @@
     align-items: flex-start;
     gap: 40px;
     padding: 50px;
-    background: #111; /* Dark background for space theme */
+    background: #090a37;
     flex-wrap: wrap;
+    margin-top: 0;
 }
 
 .plan-wrapper {
@@ -17,71 +17,76 @@
     align-items: center;
 }
 
-/* Plan card styles */
+.heading-container {
+    background: #090a37; 
+    padding: 20px 0;
+    text-align: center;
+    margin: 0; 
+}
+
+.heading {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 70px;
+}
+
+.plan-details {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 20px;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #dcdcdc;
+}
+
 .plan-card {
     position: relative;
-    background: linear-gradient(135deg, #1e1e2f, #2a2a3b, #3c3c50); /* Dark space-themed gradient */
+    background: linear-gradient(135deg, #1e1e2f, #2a2a3b, #3c3c50);
     border-radius: 30px;
-    padding: 50px;
+    padding: 30px 20px;
     width: 300px;
     height: 400px;
     color: #fff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Darker shadow for space look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
     text-align: center;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 55% 85%, 40% 100%, 0 100%);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
     overflow: hidden;
     cursor: pointer;
+    margin-bottom: 0px;
 }
 
-/* Hover effect on the plan card */
 .plan-card:hover {
-    /* transform: translateY(-10px); */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8); /* Darker shadow on hover */
-    animation: glowEffect 1s ease-in-out infinite; /* Adding a glowing effect */
+    transform: translateY(-5px);
 }
 
-/* Glowing effect for card */
-@keyframes glowEffect {
-    0% {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.1);
-    }
-    50% {
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4);
-    }
-    100% {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.1);
-    }
-}
-
-/* Adding the before pseudo-element for animation */
 .plan-card::before,
 .plan-card::after {
     position: absolute;
     content: "";
     width: 20%;
     height: 20%;
-    background: rgba(255, 255, 255, 0.2); /* Subtle space-like glow */
+    background: rgba(255, 255, 255, 0.1); 
     transition: all 0.5s ease;
     z-index: 0;
     pointer-events: none;
 }
 
-/* Top-right circle */
 .plan-card::before {
     top: 0;
     right: 0;
     border-radius: 0 30px 0 100%;
 }
 
-/* Bottom-left circle */
 .plan-card::after {
     bottom: 0;
     left: 0;
     border-radius: 0 100% 0 30px;
 }
 
-/* Hover effects */
 .plan-card:hover::before,
 .plan-card:hover::after {
     width: 100%;
@@ -91,31 +96,31 @@
 }
 
 .plan-card:hover::after {
-    background: rgba(255, 255, 255, 0.3); /* Slight glow effect on hover */
+    background: rgba(255, 255, 255, 0.1); 
 }
 
-/* Text content stays visible */
 .plan-card .placeholder {
     position: relative;
     z-index: 1;
 }
 
-/* Button Styles */
-/* Button Styles */
-/* Button Styles */
-/* Button Styles */
+.plan-card .placeholder h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
 .cta-button {
     margin-top: 20px;
     width: 60%;
-    background: linear-gradient(135deg, #1f1f2f, #2f2f50); /* Dark space-like gradient */
+    background: linear-gradient(135deg, #1f1f2f, #2f2f50); 
     height: 50px;
-    color: #fff; /* Light text for contrast */
+    color: #fff; 
     font-size: 1.2rem;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6); /* Dark shadow for space look */
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+    transition: background 0.3s ease, transform 0.3s ease;
     clip-path: polygon(21% 0, 100% 0, 100% 100%, 0 100%);
     text-align: center;
     border-radius: 12px;
@@ -125,38 +130,19 @@
     top: -70px;
 }
 
-/* Button Hover effect */
 .cta-button:hover {
-    background: linear-gradient(135deg, #3a3a64, #1a1a30); /* Darker space-like gradient */
-    box-shadow: 0 0 30px 10px rgba(255, 255, 255, 1), 0 0 60px 20px rgba(255, 255, 255, 0.8), 0 0 100px 30px rgba(255, 255, 255, 0.6); /* Strong neon glow */
-    transform: scale(1.05); /* Slight scale effect */
-    animation: neonPulseStrong 1.5s infinite alternate; /* Strong pulse effect */
+    background: linear-gradient(135deg, #3a3a64, #1a1a30);
+    transform: scale(1.05);
 }
 
-/* Strong Neon pulse animation */
-@keyframes neonPulseStrong {
-    0% {
-        box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.6), 0 0 40px 15px rgba(255, 255, 255, 0.5); /* Medium glow */
-    }
-    50% {
-        box-shadow: 0 0 40px 15px rgba(255, 255, 255, 1), 0 0 80px 30px rgba(255, 255, 255, 0.8), 0 0 120px 40px rgba(255, 255, 255, 0.7); /* Strongest glow */
-    }
-    100% {
-        box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.6), 0 0 40px 15px rgba(255, 255, 255, 0.5); /* Return to medium glow */
-    }
-}
-
-
-
-/* Color-specific variations */
 .small-plan {
-    background: linear-gradient(135deg, #1e1e2f, #2a2a3b, #3c3c50); /* Dark theme for small plan */
+    background: linear-gradient(135deg, #1e1e2f, #2a2a3b, #3c3c50);
 }
 
 .medium-plan {
-    background: linear-gradient(135deg, #2f2f50, #3e3e68, #4d4d80); /* Deep cosmic blues */
+    background: linear-gradient(135deg, #2f2f50, #3e3e68, #4d4d80);
 }
 
 .large-plan {
-    background: linear-gradient(135deg, #1f1f2f, #35356b, #4a4a7f); /* Space-like deep blues and purples */
+    background: linear-gradient(135deg, #1f1f2f, #35356b, #4a4a7f);
 }

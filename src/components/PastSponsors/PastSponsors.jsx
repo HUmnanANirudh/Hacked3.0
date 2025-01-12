@@ -63,7 +63,7 @@ function PastSponsors() {
 
   return (
     <section className="past-sponsors">
-      <h2>Past Sponsors</h2>
+      <h2>PAST SPONSORS</h2>
       <div className="sponsor-cards">
         {logos.map((logo, index) => (
           <div
