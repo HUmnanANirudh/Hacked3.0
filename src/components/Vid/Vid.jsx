@@ -99,4 +99,4 @@ const HeroVideoPlayer = () => {
   );
 };
 
-export default HeroVideoPlayer; 
+export default HeroVideoPlayer;

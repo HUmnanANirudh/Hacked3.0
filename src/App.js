@@ -17,7 +17,7 @@ import CenteredVideo from './components/Vid/Vid.jsx';
 function App() {
   return (
     <div>
-      <Navbar />
+      
     
       <CenteredVideo />
   
@@ -29,7 +29,8 @@ function App() {
       <LeadOrg />
       <MeetTheTeam />
       <FAQs />
-      <Footer />
+      <Navbar />
+      {/* <Footer /> */}
     </div>
   );
 }
