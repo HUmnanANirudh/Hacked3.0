@@ -26,7 +26,7 @@ const NavFooter = () => {
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = window.scrollY;
       const faqSection = document.getElementById('FAQs');
-      const buffer = 50; // Reduced buffer
+      const buffer = 50;
 
       if (faqSection) {
         const faqBottom = faqSection.getBoundingClientRect().bottom + window.scrollY;
@@ -52,6 +52,36 @@ const NavFooter = () => {
       setIsMenuOpen(false);
     }
   };
+
+  const MobileMenu = () => (
+    <AnimatePresence>
+      {isMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          className="absolute bottom-full left-0 right-0 mb-2 p-4 rounded-lg md:hidden"
+          style={{
+            background: 'linear-gradient(90deg, rgba(49,46,129,0.95) 0%, rgba(17,24,39,0.95) 100%)',
+            backdropFilter: 'blur(8px)',
+          }}
+        >
+          <div className="flex flex-col space-y-3">
+            {navItems.map((item, index) => (
+              <button
+                key={index}
+                onClick={() => scrollToSection(item.id)}
+                className={`px-4 py-2 text-left rounded-lg transition-colors duration-200
+                  ${activeSection === item.id ? 'bg-white/10 text-purple-400' : 'text-white/90 hover:bg-white/5 hover:text-white'}`}
+              >
+                {item.title}
+              </button>
+            ))}
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
 
   const DesktopNav = () => (
     <div className="hidden md:flex items-center flex-nowrap space-x-4">
@@ -119,13 +149,12 @@ const NavFooter = () => {
 
   return (
     <>
-      {/* Minimal spacer div */}
       <div className={`h-4 transition-all duration-500 ${isAtBottom ? 'opacity-100' : 'opacity-0 h-0'}`} />
       
       <motion.div
         className={`${
           isAtBottom 
-            ? 'w-full relative mt-2' // Reduced top margin
+            ? 'w-full relative mt-2'
             : 'fixed bottom-4 left-0 right-0 flex justify-center z-50'
         }`}
         layout
@@ -135,13 +164,13 @@ const NavFooter = () => {
           stiffness: 100
         }}
       >
-        <div className={`${!isAtBottom ? 'w-[90%] md:w-auto' : 'w-full'}`}>
+        <div className={`${!isAtBottom ? 'w-[90%] md:w-auto' : 'w-full'} relative`}>
           <motion.div
             className={`${
               isAtBottom 
-                ? 'px-4 py-6 w-full' // Reduced padding
+                ? 'px-4 py-6 w-full'
                 : 'px-4 md:px-5 py-2.5 rounded-full'
-            } shadow-lg border border-white/5`}
+            } shadow-lg border border-white/5 relative`}
             style={{
               background: 'linear-gradient(90deg, rgba(49,46,129,0.6) 0%, rgba(17,24,39,0.6) 100%)',
               backdropFilter: 'blur(8px)',
@@ -151,23 +180,26 @@ const NavFooter = () => {
             {isAtBottom ? (
               <FooterContent />
             ) : (
-              <div className="flex items-center justify-between">
-                <img
-                  src="/assets/images/logo.svg"
-                  alt="Logo"
-                  className="w-8 h-8 md:w-10 md:h-10 cursor-pointer"
-                  onClick={() => scrollToSection('home')}
-                />
-                <DesktopNav />
-                <div className="md:hidden">
-                  <button
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="p-2 text-white"
-                  >
-                    {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                  </button>
+              <>
+                <div className="flex items-center justify-between">
+                  <img
+                    src="/assets/images/logo.svg"
+                    alt="Logo"
+                    className="w-8 h-8 md:w-10 md:h-10 cursor-pointer"
+                    onClick={() => scrollToSection('home')}
+                  />
+                  <DesktopNav />
+                  <div className="md:hidden">
+                    <button
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                      className="p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
+                    >
+                      {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
+                  </div>
                 </div>
-              </div>
+                <MobileMenu />
+              </>
             )}
           </motion.div>
         </div>
