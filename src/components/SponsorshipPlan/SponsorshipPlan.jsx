@@ -78,7 +78,7 @@ const SponsorshipPlan = () => {
         <div className="plan-wrapper">
           <div className="plan-card small-plan">
             <div className="placeholder">
-              <h2>Other Partnership Opportunities</h2>
+              <h2>Other Partnerships</h2>
               <ul className="plan-details">
                 <li>
                 Flexible Support: Provide goodies, services, or products for the event.

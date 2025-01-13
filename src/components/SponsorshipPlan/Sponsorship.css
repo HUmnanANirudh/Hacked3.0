@@ -30,6 +30,7 @@
     font-weight: bold;
     margin: 0;
     margin-top: 70px;
+    
 }
 
 .plan-details {
@@ -44,11 +45,11 @@
 
 .plan-card {
     position: relative;
-    background: linear-gradient(135deg, #1e1e2f, #2a2a3b, #3c3c50);
+    background: linear-gradient(135deg, #39395f, #2a2a3b, #3c3c50);
     border-radius: 30px;
     padding: 30px 20px;
     width: 300px;
-    height: 400px;
+    height: 450px;
     color: #fff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
     text-align: center;
@@ -136,13 +137,20 @@
 }
 
 .small-plan {
-    background: linear-gradient(135deg, #1e1e2f, #2a2a3b, #3c3c50);
+    background: linear-gradient(135deg, #6d549b, #6363a9, #6d5eb5);
 }
 
 .medium-plan {
-    background: linear-gradient(135deg, #2f2f50, #3e3e68, #4d4d80);
+    background: linear-gradient(135deg,  #6d549b, #6363a9, #6d5eb5);
 }
 
 .large-plan {
-    background: linear-gradient(135deg, #1f1f2f, #35356b, #4a4a7f);
+    background: linear-gradient(135deg,  #6d549b, #6363a9, #6d5eb5);
+}
+
+.placeholder h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
