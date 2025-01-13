@@ -31,7 +31,7 @@ const TeamNav = () => {
 
   const CurrentComponend = items.find(item=>item.id === Clicked)?.component;
   return (
-    <div className="flex justify-center items-center px-4">
+    <div className="flex justify-center items-center px-4 md:mb-16">
       <div className="flex flex-wrap justify-center items-center w-full md:w-[80%]">
         {items.map((item) => (
           <button
@@ -51,18 +51,17 @@ const TeamNav = () => {
             <span className="text-base md:text-xl">{item.label}</span>
           </button>
         ))}
-        <div className="w-full">
-        <motion.div
-          key={Clicked}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <Suspense fallback={<div>Loading...</div>}/>
-          {CurrentComponend && <CurrentComponend />}
-        </motion.div>
-      </div>
+         <Suspense fallback={<div className="relative w-full m-80 p-10 animate-pulse"></div>}>
+            <motion.div
+              key={Clicked}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{duration:0.3,  ease: "easeInOut"}}
+            >
+              {CurrentComponend && <CurrentComponend />}
+            </motion.div>
+          </Suspense>
       </div>
       </div>
   );

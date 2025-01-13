@@ -11,9 +11,9 @@ function LeadOrg() {
             autem.
           </p>
         </div>
-        <div className="flex flex-col md:flex-row justify-center mt-6 items-center gap-20 md:gap-4 w-full md:w-2/3">
-          <Card img={"/assets/Shrey.png"} name={"Shrey Jaiswal"}/>
-          <Card img={"/assets/Priyal.png"} name={"Priyal Kuller"}/>
+        <div className="flex flex-col md:flex-row justify-center mt-6 items-center gap-20 md:gap-8 w-full md:w-2/3">
+          <Card img={"/assets/Shrey.png"} name={"Shrey"} number={"+91 88823 45939"} email={"shrey.jaiswal.23cse@bmu.edu.in"}/>
+          <Card img={"/assets/Priyal.png"} name={"Priyal"} number={"+91 93154 72949"} email={"priyal.khullar.23cse@bmu.edu.in"}/>
         </div>
       </div>
     </section>

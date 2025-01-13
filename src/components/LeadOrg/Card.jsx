@@ -1,31 +1,102 @@
-const Card = ({img,name}) => {
+import { MdPhone, MdEmail } from "react-icons/md";
+import { motion, useMotionValue, useSpring, useTransform } from "motion/react"
+
+
+const Card = ({ img, name,number,email }) => {
+  const x = useMotionValue(0.5);
+  const y = useMotionValue(0.5);
+
+  const mouseX = useSpring(x, { stiffness: 300, damping: 30 });
+  const mouseY = useSpring(y, { stiffness: 300, damping: 30 });
+
+  const rotateX = useTransform(mouseY, [0, 1], ["12.5deg", "-12.5deg"]);
+  const rotateY = useTransform(mouseX, [0, 1], ["-12.5deg", "12.5deg"]);
+
+  const move = (e) => {
+    const pos = e.currentTarget.getBoundingClientRect();
+    const width = pos.width;
+    const height = pos.height;
+
+    const posX = e.clientX - pos.left;
+    const posY = e.clientY - pos.top;
+
+    const Xpct = posX / width;
+    const Ypct = posY / height;
+
+    x.set(Xpct);
+    y.set(Ypct);
+  };
+
+  const leave = () => {
+    x.set(0.5); 
+    y.set(0.5); 
+  };
+
   return (
-    <div className="relative flex flex-col justify-center items-center w-full max-w-xs md:max-w-sm lg:max-w-md bg-gray-900 rounded-3xl ">
-      <div className="absolute -top-10">
+    <motion.div
+      className="relative flex flex-col justify-between items-center w-full h-full max-w-xs md:max-w-sm lg:max-w-md rounded-3xl overflow-hidden bg-gradient-to-r from-indigo-600/20 to-blue-800/20"
+      style={{
+        transform: "translateZ(100px)",
+        transformStyle: "preserve-3d",
+        perspective: 1000, 
+        rotateX,
+        rotateY,
+      }}
+      onMouseMove={move}
+      onMouseLeave={leave}
+      whileHover={{ translateZ: 100,}}
+      transition={{ type: "spring", stiffness: 150, damping: 20 }}
+    >
+      <div className="absolute top-4 left-4 flex justify-center items-center">
+        <h1
+          className="text-3xl sm:text-4xl md:text-4xl font-extrabold text-white/50 whitespace-nowrap z-0 tracking-wider uppercase"
+        >
+          {name}
+        </h1>
+      </div>
+       <motion.div
+        className="relative w-full z-10"
+        style={{
+          transform: "translateZ(100px)", 
+          rotateX, 
+          rotateY,
+        }}
+        onMouseMove={move}
+        onMouseLeave={leave}>
         <img
           src={img}
-          className="w-20 h-20 object-fill rounded-full shadow-xl shadow-gray-600 bg-white"
+          className="w-full h-auto object-cover"
           loading="lazy"
-          alt=""
+          alt={name}
         />
-      </div>
+      </motion.div>
+      <div
+        className="relative w-full flex flex-col justify-center items-center text-center bg-[#37375e]/30 py-4 z-20 text-white space-y-2"
+        style={{
+          transform: "translateZ(15px)",
+          transformStyle: "preserve-3d",
+        }}
+      >
+      <a
+          href={` https://wa.me/{number}`} 
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 hover:text-blue-300 transition-colors duration-300"
+        >
+          <MdPhone size={20} />
+          <span className="text-lg font-bold">{number}</span>
+        </a>
 
-      <div className="text-center flex flex-col justify-start pt-4">
-        <span className="text-red-600 text-5xl md:text-6xl lg:text-7xl leading-none pt-10">&ldquo;</span>
-        <div>
-        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-white">{name}</h1>
-        <p className="text-base md:text-lg lg:text-xl">Lorem ipsum dolor sit amet.</p>
-        </div>
+        <a
+          href={`mailto:${email}`} 
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 hover:text-blue-300 transition-colors duration-300"
+        >
+          <MdEmail size={20} />
+          <span className="text-sm">{email}</span>
+        </a>
       </div>
-      <div className="flex justify-center h-36 md:h-40 lg:h-44 pt-2">
-        <img
-          src="https://t3.ftcdn.net/jpg/06/15/49/68/360_F_615496890_W34yB8VDE6n5pehb5QCt1ek5oEvRo9qA.jpg"
-          className="object-cover w-full rounded-3xl"
-          loading="lazy"
-          alt=""
-        />
-      </div>
-    </div>
+    </motion.div>
   );
 };
+
 export default Card;
