@@ -70,7 +70,7 @@
     content: "";
     width: 20%;
     height: 20%;
-    background: rgba(255, 255, 255, 0.1); 
+    background: rgba(73, 38, 90, 0.373); 
     transition: all 0.5s ease;
     z-index: 0;
     pointer-events: none;
@@ -97,7 +97,7 @@
 }
 
 .plan-card:hover::after {
-    background: rgba(255, 255, 255, 0.1); 
+    background: rgba(86, 37, 93, 0.231); 
 }
 
 .plan-card .placeholder {
@@ -137,15 +137,15 @@
 }
 
 .small-plan {
-    background: linear-gradient(135deg, #6d549b, #6363a9, #6d5eb5);
+    background: linear-gradient(135deg, #594381, #8863a9, #8e5eb5);
 }
 
 .medium-plan {
-    background: linear-gradient(135deg,  #6d549b, #6363a9, #6d5eb5);
+    background: linear-gradient(135deg,  #594381, #8863a9, #8e5eb5);
 }
 
 .large-plan {
-    background: linear-gradient(135deg,  #6d549b, #6363a9, #6d5eb5);
+    background: linear-gradient(135deg, #594381, #8863a9, #8e5eb5);
 }
 
 .placeholder h2{
