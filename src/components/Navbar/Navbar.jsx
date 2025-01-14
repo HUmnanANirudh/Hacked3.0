@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { MdLocationOn } from 'react-icons/md';
 import { motion, AnimatePresence } from 'framer-motion';
-
+// deploy
 const NavFooter = () => {
   const [isAtBottom, setIsAtBottom] = useState(false);
   const [activeSection, setActiveSection] = useState('');
