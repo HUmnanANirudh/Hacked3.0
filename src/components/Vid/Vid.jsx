@@ -41,7 +41,7 @@ const HeroVideoPlayer = () => {
 
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/assets/pdf/brochure.pdf';
+    link.href = '/assets/pdf/Brochure.pdf';
     link.download = 'Hacked3.0_Brochure.pdf';
     document.body.appendChild(link);
     link.click();
