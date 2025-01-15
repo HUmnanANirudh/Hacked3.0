@@ -12,7 +12,7 @@ function WhatIsHacked() {
           <h1 className="text-4xl text-center font-bold">
             What is Hacked 3.0?
           </h1>
-          <p className="my-3 text-md md:text-xl leading-relaxed">
+          <p className="my-3 text-md md:text-xl leading-relaxed text-justify">
             Hacked 3.0 is a 24-hour hackathon at BML Munjal University's 67th
             Milestone fest, uniting students from diverse disciplines to
             brainstorm, prototype, and solve real-world problems inspired by the

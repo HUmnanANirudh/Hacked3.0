@@ -34,7 +34,7 @@ const Prizes = () => {
   return (
     <div
       className="p-8 text-center" id = "Prizes"
-      style={{ backgroundColor: "#090a37", minHeight: "100vh" }}
+      style={{ backgroundColor: "#090a37", minHeight: "40vh" }}
     >
      
       <h2 className="text-4xl font-bold text-white   mb-20 tracking-wide mt-0">
