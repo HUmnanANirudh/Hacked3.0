@@ -19,7 +19,21 @@ const NavFooter = () => {
     { title: 'TEAM', id: '#team' },
     { title: 'FAQs', id: 'FAQs' },
   ];
+  const venueAddress = "BML Munjal University, 67th Milestone, National Highway – 8, Sidhrawali, Gurugram";
+  const mapsUrl = "https://maps.google.com/maps?q=BML+Munjal+University";
 
+
+  const MapMarker = () => (
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+      <div className="relative">
+        <div className="w-6 h-6 bg-red-500 rounded-full animate-pulse" />
+        <div className="absolute -inset-1 bg-red-500 rounded-full opacity-30 animate-ping" />
+      </div>
+    </div>
+  );
+  const handleMapClick = () => {
+    window.open(mapsUrl, '_blank');
+  };
   useEffect(() => {
     const handleScroll = () => {
       const windowHeight = window.innerHeight;
@@ -105,44 +119,56 @@ const NavFooter = () => {
   );
 
   const FooterContent = () => (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 w-full max-w-6xl mx-auto px-4">
-      <div>
-        <img src="/assets/images/logo.svg" alt="Logo" className="w-24" />
-        <h1 className="text-xl font-semibold text-purple-400 mt-4">Hacked 3.0</h1>
-      </div>
-      <div>
-        <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
-        <ul className="space-y-2">
-          {navItems.map((item, index) => (
-            <li key={index}>
-              <button
-                onClick={() => scrollToSection(item.id)}
-                className="hover:text-purple-400 transition duration-300 text-white/90"
-              >
-                {item.title}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
-          <MdLocationOn /> Address
-        </h2>
-        <p className="text-white/90">
-          67th Milestone, NH 48, Kapriwas, Haryana 122413
-        </p>
-      </div>
-      <div>
-        <h2 className="text-lg font-semibold mb-4">Social Links</h2>
-        <div className="flex gap-4">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition duration-300">
-            <FaInstagram size={24} />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition duration-300">
-            <FaLinkedinIn size={24} />
-          </a>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl mx-auto px-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <img src="/assets/images/logo.svg" alt="Logo" className="w-24" />
+          <h1 className="text-xl font-semibold text-purple-400 mt-4">Hacked 3.0</h1>
         </div>
+        <div>
+          <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
+          <ul className="space-y-2">
+            {navItems.map((item, index) => (
+              <li key={index}>
+                <button
+                  onClick={() => scrollToSection(item.id)}
+                  className="hover:text-purple-400 transition duration-300 text-white/90"
+                >
+                  {item.title}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
+            <MdLocationOn /> Address
+          </h2>
+          <p className="text-white/90">
+            67th Milestone, NH 48, Kapriwas, Haryana 122413
+          </p>
+        </div>
+        <div>
+          <h2 className="text-lg font-semibold mb-4">Social Links</h2>
+          <div className="flex gap-4">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition duration-300">
+              <FaInstagram size={24} />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition duration-300">
+              <FaLinkedinIn size={24} />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="w-full h-64 md:h-full rounded-lg overflow-hidden relative">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3516.1988008310335!2d76.84945007542669!3d28.201338875812186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3e997f0e311b%3A0x13f98e373802ed22!2sBML%20Munjal%20University!5e0!3m2!1sen!2sin!4v1705317136344!5m2!1sen!2sin"
+          className="w-full h-full border-0"
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-loading"
+        ></iframe>
+        <MapMarker />
       </div>
     </div>
   );

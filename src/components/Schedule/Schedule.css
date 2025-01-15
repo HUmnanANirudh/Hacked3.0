@@ -1,6 +1,9 @@
 .schedule {
-    padding: 50px;
+    padding: 75px;
     /* background: #222; */
     /* color: #fff; */
   }
   
+.mt-2 {
+  margin-top: 3rem;
+}
