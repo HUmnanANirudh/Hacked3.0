@@ -65,12 +65,12 @@ function FAQs() {
               {
                 question: "When and where will Hacked 3.0 take place?",
                 answer:
-                  "Hacked 3.0 will kick off on [Date], 2025, and conclude on [Date] at BML Munjal University, Gurgaon, Haryana. The hackathon will run continuously for 24 hours, making for an exciting, immersive experience.",
+                  "Hacked 3.0 will kick off on 28 FEB, 2025, and conclude on 1 MAR at BML Munjal University, Gurgaon, Haryana. The hackathon will run continuously for 24 hours, making for an exciting, immersive experience.",
               },
               {
                 question: "What do participants get from Hacked 3.0?",
                 answer:
-                  "With a prize pool of up to Rs. [Amount]  top teams will earn cash prizes and certificates of excellence! All participants receive certificates, plus a chance to network with industry pros, participate in workshops, and gain valuable hands-on experience.",
+                  "With a prize pool of up to Rs. 50000  top teams will earn cash prizes and certificates of excellence! All participants receive certificates, plus a chance to network with industry pros, participate in workshops, and gain valuable hands-on experience.",
               },
               {
                 question: "Will travel reimbursement be provided?",
@@ -79,7 +79,7 @@ function FAQs() {
               },
               {
                 question: "What is the theme for Hacked 3.0?",
-                answer: "[-]",
+                answer: "Its an open theme hackathon , both software and hardware based.",
               },
               {
                 question: "Who can participate in Hacked 3.0?",

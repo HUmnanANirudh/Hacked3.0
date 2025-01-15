@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
-import "./PastSponsors.css"
 
-function PastSponsors() {
+const PastSponsors = () => {
   const logos = [
     "/assets/images/image3.webp",
     "/assets/images/coding.webp",
@@ -17,9 +16,10 @@ function PastSponsors() {
     "/assets/images/codechef.webp",
   ];
 
-  const colors = ["#00FFFF", "#7FFFD4", "#1E90FF"]; 
+  const colors = ["#00FFFF", "#7FFFD4", "#1E90FF"];
+  
   const [particles, setParticles] = useState(
-    Array.from({ length: logos.length }, () => []) 
+    Array.from({ length: logos.length }, () => [])
   );
   const [hoverActive, setHoverActive] = useState(Array(logos.length).fill(false));
   const cardRefs = useRef([]);
@@ -32,20 +32,20 @@ function PastSponsors() {
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
 
-    const particleCount = 200; 
-    const spotlightRadius = 150; 
+    const particleCount = 200;
+    const spotlightRadius = 150;
 
     const newParticles = Array.from({ length: particleCount }).map(() => {
-      const angle = Math.random() * 2 * Math.PI; 
-      const radius = Math.random() * spotlightRadius; 
+      const angle = Math.random() * 2 * Math.PI;
+      const radius = Math.random() * spotlightRadius;
 
       return {
         x: mouseX + radius * Math.cos(angle),
         y: mouseY + radius * Math.sin(angle),
-        size: Math.random() * 3 + 2, 
-        opacity: Math.random() * 0.6 + 0.4, 
-        color: colors[Math.floor(Math.random() * colors.length)], 
-        duration: Math.random() * 1.5 + 0.5, 
+        size: Math.random() * 3 + 2,
+        opacity: Math.random() * 0.6 + 0.4,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        duration: Math.random() * 1.5 + 0.5,
       };
     });
 
@@ -56,29 +56,31 @@ function PastSponsors() {
 
   const handleMouseEnter = (index) =>
     setHoverActive((prev) => prev.map((state, i) => (i === index ? true : state)));
+
   const handleMouseLeave = (index) => {
     setHoverActive((prev) => prev.map((state, i) => (i === index ? false : state)));
     setParticles((prev) => prev.map((_, i) => (i === index ? [] : prev[i])));
   };
 
   return (
-    <section className="past-sponsors" id = "PastSponsors">
-      <h2>PAST SPONSORS</h2>
-      <div className="sponsor-cards">
+    <section className="flex flex-col items-center justify-center py-10 px-5 bg-[#090a37] text-white" id="PastSponsors">
+      <h2 className="text-4xl font-semibold mb-12 mt-6">PAST SPONSORS</h2>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full max-w-7xl px-4">
         {logos.map((logo, index) => (
           <div
-            className="sponsor-card"
             key={index}
+            className="relative flex items-center justify-center bg-[#03011d] rounded-2xl overflow-hidden cursor-pointer transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] h-40 sm:h-32 md:h-36 lg:h-40"
             onMouseMove={(e) => handleMouseMove(index, e)}
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
             ref={(el) => (cardRefs.current[index] = el)}
           >
-            <div className="particles">
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
               {particles[index].map((particle, idx) => (
                 <div
                   key={idx}
-                  className="particle"
+                  className="absolute rounded-full animate-[particleFadeOut_1s_ease-out_infinite]"
                   style={{
                     top: `${particle.y}px`,
                     left: `${particle.x}px`,
@@ -88,14 +90,15 @@ function PastSponsors() {
                     opacity: particle.opacity,
                     animationDuration: `${particle.duration}s`,
                   }}
-                ></div>
+                />
               ))}
             </div>
-            <div className="content">
+            
+            <div className="relative z-10">
               <img
-                src={logo} 
+                src={logo}
                 alt={`Sponsor Logo ${index + 1}`}
-                className="object-contain"
+                className="w-20 h-auto object-contain"
               />
             </div>
           </div>
@@ -103,6 +106,6 @@ function PastSponsors() {
       </div>
     </section>
   );
-}
+};
 
 export default PastSponsors;
