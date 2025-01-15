@@ -80,12 +80,16 @@ const HeroVideoPlayer = () => {
       {/* Main content */}
       <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center z-[30] transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
         <h1 className="m-0 flex flex-row items-center justify-center whitespace-nowrap">
-          <span className="text-4xl font-sans font-semibold tracking-wider mr-5">
-            Welcome to
-          </span>
-          <span className="text-5xl font-serif font-semibold tracking-wider bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text transform leading-relaxed pb-1">
-            Hacked 3.0
-          </span>
+        <div className="flex flex-wrap justify-center items-center text-center">
+  <span className="text-4xl font-sans font-semibold tracking-wider mr-5">
+    Welcome to
+  </span>
+  <span className="text-5xl font-serif font-semibold tracking-wider bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text transform leading-relaxed pb-1 w-full md:w-auto">
+    Hacked 3.0
+  </span>
+</div>
+
+
         </h1>
         
         <p className="mt-4 text-lg text-gray-200 opacity-90">

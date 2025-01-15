@@ -2,7 +2,7 @@ import TeamCards from "./TeamCards";
 
 const Core = () =>{
     return(
-        <div className="grid md:grid-cols-3 grid-cols-2 gap-x-10 gap-y-1">
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-x-10 gap-y-1">
             
             <TeamCards img={"/assets/AdityaRastogi.png"} name={"Aditya Rastogi"} about={"Anxious yet adorable—panics hard, but wins harder with a smile that lights up the room."} github={"http://github.com/AdityaR-Dev98"} linkedin={"http://linkedin.com/in/aditya-rastogi-960116226"}/>
             <TeamCards img={"/assets/AdityaBansal.png"} name={"Aditya bansal"} about={"Silent coder, life debugger—perfecting systems and situations, even in the sleep."} github={"http://github.com/SimplyAditya"} linkedin={"http://linkedin.com/in/aditya-bansal-developer"}/>
