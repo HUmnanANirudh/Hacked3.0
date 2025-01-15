@@ -36,8 +36,7 @@ const SponsorshipPlan = () => {
               <h2>Gold Sponsor</h2>
               <ul className="plan-details">
                 <li>
-                  Media & Print Presence: Logo on all media promotions,
-                  including print and digital.
+                  Media & Print Presence: Logo on print and digital promotions.
                 </li>
                 <li>Merchandise Placement: Logo on event merchandise sleeves.</li>
                 <li>
