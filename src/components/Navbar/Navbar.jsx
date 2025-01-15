@@ -151,10 +151,10 @@ const NavFooter = () => {
         <div>
           <h2 className="text-lg font-semibold mb-4">Social Links</h2>
           <div className="flex gap-4">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition duration-300">
+            <a href="https://www.instagram.com/hacked_bmu/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition duration-300">
               <FaInstagram size={24} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition duration-300">
+            <a href="https://www.linkedin.com/company/hacked-67thmilestone/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition duration-300">
               <FaLinkedinIn size={24} />
             </a>
           </div>
