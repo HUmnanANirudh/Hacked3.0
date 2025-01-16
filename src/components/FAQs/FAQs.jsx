@@ -84,7 +84,7 @@ function FAQs() {
               {
                 question: "Who can participate in Hacked 3.0?",
                 answer:
-                  "Hacked 3.0 is open to all college students passionate about technology and innovation. Teams can consist of [-] members.",
+                  "Hacked 3.0 is open to all college students passionate about technology and innovation. Teams can consist of [2 - 4] members.",
               },
               {
                 question: "Do I have to be a computer science major to join?",

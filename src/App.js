@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 
 // Components
 import Navbar from './components/Navbar/Navbar.jsx';
@@ -18,7 +19,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Set a minimum loading time of 3 seconds
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 3000);
@@ -26,7 +26,6 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Prevent body scroll during loading
   useEffect(() => {
     if (isLoading) {
       document.body.style.overflow = 'hidden';
@@ -36,7 +35,7 @@ function App() {
   }, [isLoading]);
 
   return (
-    <>
+    <HelmetProvider>
       {isLoading ? (
         <SpaceLoader />
       ) : (
@@ -54,7 +53,7 @@ function App() {
           {/* <Footer /> */}
         </div>
       )}
-    </>
+    </HelmetProvider>
   );
 }
 
