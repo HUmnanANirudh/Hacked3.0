@@ -37,12 +37,13 @@ const Prizes = () => {
       style={{ backgroundColor: "#090a37", minHeight: "40vh" }}
     >
      
-      <h2 className="text-4xl font-bold text-white   mb-20 tracking-wide mt-0">
+     <h2 className="text-6xl font-bold text-white mb-32 tracking-wider mt-0 relative">
         PRIZES
+        <div className="absolute left-1/2 -translate-x-1/2 -bottom-4 w-32 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-70" />
       </h2>
 
      
-      <div className="flex flex-wrap justify-center items-center gap-10">
+      <div className="flex flex-wrap justify-center items-center gap-20">
         {cards.map((card) => (
           <div
             key={card.id}

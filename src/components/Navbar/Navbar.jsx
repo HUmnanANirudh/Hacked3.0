@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, MapPin } from 'lucide-react';
-import { FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaInstagram, FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
 import { MdLocationOn } from 'react-icons/md';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -150,12 +150,15 @@ const NavFooter = () => {
         </div>
         <div>
           <h2 className="text-lg font-semibold mb-4">Social Links</h2>
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
             <a href="https://www.instagram.com/hacked_bmu/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition duration-300">
               <FaInstagram size={24} />
             </a>
             <a href="https://www.linkedin.com/company/hacked-67thmilestone/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition duration-300">
               <FaLinkedinIn size={24} />
+            </a>
+            <a href="mailto:Contact@hacked67thmilestone.com" className="hover:text-purple-400 transition duration-300">
+              <FaEnvelope size={24} />
             </a>
           </div>
         </div>
@@ -176,7 +179,7 @@ const NavFooter = () => {
       </div>
     </div>
   );
-
+  
   return (
     <>
       <div className={`h-4 transition-all duration-500 ${isAtBottom ? 'opacity-100' : 'opacity-0 h-0'}`} />
