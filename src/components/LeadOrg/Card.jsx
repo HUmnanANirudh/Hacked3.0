@@ -48,11 +48,11 @@ const Card = ({ img, name,number,email }) => {
       transition={{ type: "spring", stiffness: 150, damping: 20 }}
     >
       <div className="absolute top-4 left-4 flex justify-center items-center">
-        <h1
+        <h2
           className="text-3xl sm:text-4xl md:text-4xl font-extrabold text-white/50 whitespace-nowrap z-0 tracking-wider uppercase"
         >
           {name}
-        </h1>
+        </h2>
       </div>
        <motion.div
         className="relative w-full z-10"

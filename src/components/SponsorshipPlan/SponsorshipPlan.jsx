@@ -5,7 +5,7 @@ const SponsorshipPlan = () => {
   return (
     <div className="plans-container">
       <div className="heading-container">
-        <h1 className="heading">SPONSORSHIP PLAN</h1>
+        <h2 className="heading text-4xl">SPONSORSHIP PLAN</h2>
       </div>
       <div className="plans">
         

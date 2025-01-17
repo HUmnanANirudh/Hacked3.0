@@ -5,7 +5,7 @@ function LeadOrg() {
     <section id="#contact" className="md:my-40 my-10">
       <div className="flex flex-col md:flex-row justify-between items-center gap-8 px-10">
         <div className="flex flex-col md:items-start items-center justify-center w-full md:w-1/2 p-4 gap-10 md:gap-2">
-          <h1 className="text-3xl font-bold ">CONTACT US</h1>
+          <h2 className="text-4xl font-bold ">CONTACT US</h2>
           <p className="text-xl text-center md:text-start">
           For more information about the hackathon, feel free to reach out to us through the provided contact details. We're here to assist you with any queries or support you need!
           </p>

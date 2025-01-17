@@ -12,7 +12,7 @@
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16 container mx-auto px-6">
           {/* Logo and About Section */}
           <div className="flex flex-col items-start gap-6">
-            <img src="/assets/images/logo.svg" alt="Logo" className="w-24 md:w-32" />
+            <img src="/assets/images/logo.svg" alt="Logo-hacked" className="w-24 md:w-32" />
             <div>
               <h1 className="text-3xl font-semibold text-purple-400">Hacked 3.0</h1>
               {/* <p className="text-gray-300 mt-2">

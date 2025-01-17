@@ -3,7 +3,7 @@ import TeamNav from "./TeamNav"
 function MeetTheTeam() {
   return (
     <section id="#team">
-      <h1 className="text-center p-10 text-3xl font-bold">Meet the Team</h1>
+      <h2 className="text-center p-10 text-4xl font-bold">MEET THE TEAM</h2>
       <TeamNav/>
     </section>
   );

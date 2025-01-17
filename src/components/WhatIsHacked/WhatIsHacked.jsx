@@ -6,12 +6,12 @@ function WhatIsHacked() {
     <section className="p-6 flex justify-center items-center bg-[#090a37] min-h-[80vh]" id = "WhatIsHacked">
       <div className="md:flex-row w-11/12 flex gap-3 flex-col items-center">
         <div className="w-full md:w-2/5">
-          <img src="/assets/images/what-is-hacked.webp" alt="" />
+          <img src="/assets/images/what-is-hacked.webp" alt="What is Hacked" />
         </div>
         <div className="flex w-full md:w-3/5 flex-col mx-3">
-          <h1 className="text-4xl text-center font-bold">
+          <h2 className="text-4xl text-center font-bold">
             What is Hacked 3.0?
-          </h1>
+          </h2>
           <p className="my-3 text-md md:text-xl leading-relaxed text-justify">
             Hacked 3.0 is a 24-hour hackathon at BML Munjal University's 67th
             Milestone fest, uniting students from diverse disciplines to

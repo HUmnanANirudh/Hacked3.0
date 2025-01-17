@@ -21,6 +21,7 @@ const TeamCards = ({ name, img, about,linkedin,github }) => {
       <div className=" absolute w-[calc(100%-6px)] h-[calc(100%-6px)] top-[3px] left[3px] rounded-[29px] overflow-hidden z-10 border-0 border-white/30 transition-all duration-500 ease-in-out delay-75 group-hover:w-[100px] group-hover:h-[100px] group-hover:top-[10px] group-hover:left-[10px] group-hover:rounded-full group-hover:z-30 group-hover:border-[7px] group-hover:shadow-xl hover:scale-125">
         <img
           src={img}
+          alt={`team member-${name}`}
           loading="lazy"
           onLoad={handleImageLoad}
           className={` bg-[#37375e]/70 w-full h-full object-cover object-[0_0px] group-hover:object-[0_10px] group-hover:scale-[1.7] transition-all duration-700 ease-in-out${
