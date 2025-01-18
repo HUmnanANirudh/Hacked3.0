@@ -1,25 +1,33 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Hacked 3.0",
+  "name": "Hacked 3.0 | BMU's Premier 67th Milestone Hackathon 2025",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
     },
     {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
     }
   ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "description": "A 24-hour hackathon at BML Munjal University's 67th Milestone fest",
+  "orientation": "portrait-primary",
+  "categories": ["education", "technology", "development"]
 }
